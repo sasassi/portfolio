@@ -30,7 +30,7 @@ export function useChat() {
     if (!text || isLoading) return;
 
     const userMsg: ChatMessage = {
-      id: crypto.randomUUID(),
+      id: generateId(),
       role: "user",
       content: text,
     };
@@ -50,7 +50,7 @@ export function useChat() {
       }
 
       const assistantMsg: ChatMessage = {
-        id: crypto.randomUUID(),
+        id: generateId(),
         role: "assistant",
         content: "",
       };
